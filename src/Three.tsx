@@ -2,17 +2,13 @@ import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { useRef } from "react";
 import { Mesh, Vector3 } from "three";
 import "./Three.css";
-
-
+import { FirstPersonControls } from "@react-three/drei";
 
 const RotationBox = () => {
   const mesh = useRef<Mesh>(null!);
-  
-  useFrame(() => {
-    mesh.current.rotation.x = mesh.current.rotation.x += 0.01;
-    mesh.current.rotation.y = mesh.current.rotation.y += 0.01;
-    mesh.current.rotation.z = mesh.current.rotation.z += 0.01;
-  });
+  const { camera } = useThree();
+
+  camera.position.set(0, 0, 10);
   return (
     <mesh ref={mesh}>
       <boxGeometry />
@@ -27,6 +23,8 @@ function Three() {
       <Canvas className="canvas">
         <directionalLight position={[0, 0, 5]} />
         <RotationBox />
+        <FirstPersonControls  movementSpeed={3} lookSpeed={0.2} />
+        
       </Canvas>
     </div>
   );
