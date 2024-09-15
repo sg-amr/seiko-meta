@@ -1,7 +1,8 @@
-import "../css/Home.css";
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import '../css/Home.css';  // CSSは前回のものを再利用
 
-function Home() {
+const HomePage = () => {
   return (
     <div className="home-container">
       {/* パララックス背景 */}
@@ -14,46 +15,42 @@ function Home() {
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 1.5 }}
       >
-        星光メタバース
+        Welcome to Our Metaverse
       </motion.h1>
 
       {/* ナビゲーションリンク */}
       <div className="links-container">
-        <motion.a
-          href="/login"
-          className="nav-link"
+        <motion.div
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
+          className='nav-link-box'
         >
-          Login
-        </motion.a>
-        <motion.a
-          href="/signup"
-          className="nav-link"
+          <Link to="/login" className="nav-link">Login</Link>
+        </motion.div>
+        <motion.div
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
+          className='nav-link-box'
         >
-          Sign Up
-        </motion.a>
-        <motion.a
-          href="/exe"
-          className="nav-link"
+          <Link to="/signup" className="nav-link">Sign Up</Link>
+        </motion.div>
+        <motion.div
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
+          className='nav-link-box'
         >
-          Start Metaverse
-        </motion.a>
-        <motion.a
-          href="/setting"
-          className="nav-link"
+          <Link to="/exe" className="nav-link">Start Metaverse</Link>
+        </motion.div>
+        <motion.div
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
+          className='nav-link-box'
         >
-          Setting
-        </motion.a>
+          <Link to="/setting" className="nav-link">Settings</Link>
+        </motion.div>
       </div>
     </div>
   );
 };
 
-export default Home;
+export default HomePage;

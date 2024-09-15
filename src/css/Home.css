@@ -10,6 +10,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: left;
     overflow: hidden;
     color: white;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -51,12 +52,12 @@
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    text-align: center;
   }
   
-  .nav-link {
-    font-size: 1.5rem;
-    color: white;
-    text-decoration: none;
+  .nav-link-box {
+    width: 100%;
+    height: 100%;
     padding: 1rem 2rem;
     background-color: #0074D9;  /* メタバースに合った青色 */
     border-radius: 5px;
@@ -64,7 +65,18 @@
     text-align: center;
   }
   
-  .nav-link:hover {
+  .nav-link{
+    font-size: 1.5rem;
+    color: white;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nav-link-box:hover {
     background-color: #005bb5;
   }
   
@@ -74,7 +86,7 @@
       font-size: 2.5rem;
     }
   
-    .nav-link {
+    .nav-link-box {
       font-size: 1.2rem;
       padding: 0.8rem 1.5rem;
     }

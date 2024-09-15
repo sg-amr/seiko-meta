@@ -45,6 +45,7 @@ class SettingData {
     return this;
   }
   init(device: "smartphone" | "tablet" | "pc") {
+    // デバイスごとに設定のテンプレートを作る
     if (device === "smartphone") {
       this.operate.viewport = "touch";
       this.operate.viewportSensi = 100;

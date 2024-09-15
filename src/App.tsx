@@ -32,8 +32,12 @@ function App() {
 
     // デバイス情報からテンプレートで初期化し、保存
     setSetting(setting.init(device));
-    
   }, []);
+  // setSettingを渡すために関数宣言
+  function saveData(data: SettingData) {
+    setSetting(data);
+  }
+  const data = setting.get();
   return (
     <>
       <BrowserRouter>
@@ -41,7 +45,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/exe" element={<Exe />} />
           <Route path="/map" element={<Map />} />
-          <Route path="/setting" element={<Setting />} />
+          <Route path="/setting" element={<Setting saveData={saveData} data={data} />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="*" element={<NotFound />} />
