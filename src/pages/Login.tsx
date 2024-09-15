@@ -1,6 +1,13 @@
-function Login() {
+import SettingData from "../setting";
+
+function Login({ saveData, data }: { saveData: (e: SettingData) => void, data: SettingData }) {
+    const newData = data.get();
+    saveData(newData);
     return (
-        <h1>Login page</h1>
+        <>
+            <h1>{JSON.stringify(newData)}</h1>
+            <p>fhf</p>
+        </>
     )
 }
 

@@ -7,7 +7,7 @@ import { useThree } from "@react-three/fiber";
 
 
 function player() {
-    let walkSpeed = 0.1;
+    let walkSpeed = 100;
 
     // カメラを取得
     const { camera } = useThree();

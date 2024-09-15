@@ -15,7 +15,7 @@ const HomePage = () => {
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 1.5 }}
       >
-        Welcome to Our Metaverse
+        Seiko
       </motion.h1>
 
       {/* ナビゲーションリンク */}
