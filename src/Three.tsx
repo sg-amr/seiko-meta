@@ -1,14 +1,16 @@
-import { Canvas, useThree } from "@react-three/fiber";
+// 描画するコンポーネント
+
+import { Canvas } from "@react-three/fiber";
 import { useRef } from "react";
 import { Mesh } from "three";
 import "./Three.css";
 import { FirstPersonControls } from "@react-three/drei";
+import player from "./player";
 
-const RotationBox = () => {
+
+function RotationBox() {
   const mesh = useRef<Mesh>(null!);
-  const { camera } = useThree();
-
-  camera.position.set(0, 0, 10);
+  player();
   return (
     <mesh ref={mesh}>
       <boxGeometry />
@@ -23,8 +25,11 @@ function Three() {
       <Canvas className="canvas">
         <directionalLight position={[0, 0, 5]} />
         <RotationBox />
-        <FirstPersonControls  movementSpeed={3} lookSpeed={0.2} />
-        
+        <FirstPersonControls movementSpeed={0} lookSpeed={0.2} />
+        <mesh position={[0, 0, 0]} rotation={[-Math.PI / 2, 0, 0]}>
+          <planeGeometry args={[100, 100]} />
+          <meshStandardMaterial color="green" />
+        </mesh>
       </Canvas>
     </div>
   );
