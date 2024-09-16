@@ -3,15 +3,16 @@ import SettingData from "../setting";
 
 import Log from "../components/Log";
 
-import { useState } from "react";
+import Menu from "../components/Menu";
+import Alert from "../components/Alert";
 
-import "../css/Exe.css";
-
-function Exe({ saveData, data }: { saveData: (e: SettingData) => void, data: SettingData }) {
+function Exe({ saveData, data }: { saveData: (e: SettingData) => void, data: SettingData }) { 
     return (
         <>
             <Three data={data} />
             <Log data={data} />
+            <Alert alert={data.mode.menu == "open"} content={"taitru"} title={"content"} />
+            <Menu saveData={saveData} data={data} />
         </>
     )
 }

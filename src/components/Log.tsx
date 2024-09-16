@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useEffect } from "react";
 
+import "./css/Log.css"
+
 function Log({ data }: { data: any }) {
 
     
@@ -17,7 +19,7 @@ function Log({ data }: { data: any }) {
                         logEle.style.display = "none";
                     }
                 }
-                logEle.innerHTML = `
+                logEle.innerHTML = `<br />
                 mode: ${data.auth.type}<br />
                 acccout: ${String(data.user.mail)}<br />
                 version: ${data.world.version}<br />
@@ -28,6 +30,7 @@ function Log({ data }: { data: any }) {
                 shiftDash: ${String(data.operate.shiftDash)}<br />
                 positioin: ${data.mode.positioin}<br />
                 version: ${data.mode.version}<br />
+                mode: ${data.mode.menu}<br />
                 accountExit: ${String(data.user.accountExit)}<br />`
             })
         }

@@ -9,7 +9,8 @@ class SettingData {
   mode: {
     viewport: string,
     version: string,
-    positioin: string
+    positioin: string,
+    menu: "open" | "close"
   }
   operate: {
     viewport: string,
@@ -35,7 +36,8 @@ class SettingData {
     this.mode = {
       viewport: "first-person",
       version: "sf",
-      positioin: "first-person"
+      positioin: "first-person",
+      menu: "close"
     };
     this.operate = {
       viewport: "touch",
