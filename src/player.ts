@@ -7,7 +7,7 @@ import { useThree } from "@react-three/fiber";
 
 
 function player() {
-    let walkSpeed = 100;
+    let walkSpeed = 10;
 
     // カメラを取得
     const { camera } = useThree();
@@ -55,9 +55,9 @@ function player() {
             }
             // シフト押しながらだと早くなる
             if (e.shiftKey) {
-                walkSpeed = 0.2;
+                walkSpeed = 50;
             } else {
-                walkSpeed = 0.1;
+                walkSpeed = 5;
             }
         });
         window.addEventListener("keyup", (e) => {
