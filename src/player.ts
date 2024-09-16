@@ -105,8 +105,6 @@ function player() {
         // カメラの回転を考慮
         direction.applyQuaternion(camera.quaternion);
 
-        // 高さの移動方向を制限
-        direction.y = 0;
 
         // カメラの位置を更新
         camera.position.add(direction);

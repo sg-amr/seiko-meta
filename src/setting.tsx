@@ -6,6 +6,11 @@ class SettingData {
     token: string | null,
     timestamp: number | null
   }
+  mode: {
+    viewport: string,
+    version: string,
+    positioin: string
+  }
   operate: {
     viewport: string,
     movement: string,
@@ -26,6 +31,11 @@ class SettingData {
       password: null,
       token: null,
       timestamp: null
+    };
+    this.mode = {
+      viewport: "first-person",
+      version: "sf",
+      positioin: "first-person"
     };
     this.operate = {
       viewport: "touch",

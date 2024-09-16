@@ -2,27 +2,18 @@
 
 import { Canvas } from "@react-three/fiber";
 import "./css/Three.css";
-import { PointerLockControls, Sky, useGLTF } from "@react-three/drei";
-import player from "./player";
+import { OrbitControls, PointerLockControls, Sky } from "@react-three/drei";
+import Models from "./models/Models";
 
+import SettingData from "./setting";
 
-function Models() {
-  const {scene} = useGLTF("testData.glb");
-  player();
-  return (
-    <mesh>
-      <primitive object={scene} />
-    </mesh>
-  )
-}
-
-function Three() {
+function Three({ data }: { data: SettingData }) {
   return (
     <div className="canvasBox">
       <Canvas className="canvas">
         <ambientLight intensity={1} />
-        <PointerLockControls />
-        <Models />
+        {data.mode.positioin == "first-person" ? <PointerLockControls /> : <OrbitControls />}
+        <Models data={data} />
         <Sky sunPosition={[100, 20, 100]} />
       </Canvas>
     </div>

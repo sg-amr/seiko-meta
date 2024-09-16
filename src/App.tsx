@@ -43,10 +43,10 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/exe" element={<Exe />} />
+          <Route path="/exe" element={<Exe saveData={saveData} data={data} />} />
           <Route path="/map" element={<Map />} />
           <Route path="/setting" element={<Setting saveData={saveData} data={data} />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/login" element={<Login saveData={saveData} data={data} />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
